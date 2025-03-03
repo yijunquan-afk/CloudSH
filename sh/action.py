@@ -7,7 +7,6 @@ import time
 import re
 import random
 
-# 忽略警告信息
 warnings.filterwarnings('ignore')
 
 logger = logging.getLogger(__name__)

@@ -5,7 +5,6 @@ ns = "hipster"
 class MonitorPod:
 
     def __init__(self, endpoint):
-        # prometheus地址
         self.usr = endpoint
 
     def timeQuery(self, start_time, end_time):

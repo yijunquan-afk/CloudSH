@@ -10,7 +10,6 @@ import yaml
 import random
 import time
 
-# 忽略警告信息
 warnings.filterwarnings('ignore')
 log_path = './log/' + str(datetime.now().strftime(
     '%Y-%m-%d')) + '-online-linucb.log'
