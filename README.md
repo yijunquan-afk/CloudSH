@@ -8,8 +8,56 @@ We propose **CloudSH**, a lightweight online learning-based self-healing framewo
 
 ## Quickly Start
 
-> The code is comming soon……
+:one: Deployment of [Online Boutique](https://github.com/GoogleCloudPlatform/microservices-demo).
+
+:two: Replace the configurations in `sh/action.py`.
+
+```
+deploy_nodes = [
+    "x.x.x.x",
+]
+```
+
+:three: Deployment of tempo, Prometheus and Loki.
+
+:four: Replace the configurations in `utils.py`.
+
+```python
+METRIC_ENDPOINT = "http://x.x.x.x:xxxx/"
+TRACE_ENDPOINT = "http://x.x.x.x:xxxx/"
+LOG_ENDPOINT = "http://x.x.x.x:xxxx/"
+```
+
+:five: Run the code
+
+```shell
+python sh_linucb.py
+```
 
 
 
 ## File Content
+
+```shell
+.
+├── data # Some experimental data
+├── log
+├── query # Get traces and metrics of Online Boutique
+│   ├── log
+│   ├── log_query.py
+│   ├── metric_query.py
+│   └── trace_query.py
+├── rca  # Root Cause Analyzer
+│   ├── detector.py # Anomaly Detector
+│   ├── pagerank.py	# Feedback-driven PageRank
+│   ├── preprocess.py
+│   └── sbfl.py			# Spectrum-Based Fault Localization
+├── sh	# Self-Healing Engine
+│   ├── action.py		
+│   ├── mab.py
+│   ├── model
+│   └── yaml
+├── sh_linucb.py # Main code
+└── utils.py    
+```
+
